@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react"
 import { Product } from "../../models/product";
 import Catalog from "../../features/catalog/Catalog";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
 
 function App() {
 
@@ -33,12 +37,17 @@ function App() {
   return (
 
 
-    
+    <Container maxWidth='xl'>
     <div>
-      <h1>Re Store</h1>
-      <Catalog products={products} addProduct={addProduct} />
+      <Box display='flex' justifyContent='center' gap={3} marginY={3}>
+      <Typography variant="h4">Re Store</Typography>
+      <Button variant="contained" onClick={addProduct}>add</Button>
+      </Box>
+     
+      <Catalog products={products}/>
       
     </div>
+    </Container>
   )
 }
 
